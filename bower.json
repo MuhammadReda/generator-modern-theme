@@ -1,0 +1,24 @@
+{
+  "name": "modern-drupal7-theme-kickstart",
+  "version": "0.0.1",
+  "homepage": "https://github.com/MuhammadReda/modern-drupal7-theme-kickstart",
+  "authors": [
+    "Muhammad Reda <say.hello@mreda.net>"
+  ],
+  "description": "A kickstart template for Drupal 7 theme that makes use of Grunt and Bower.",
+  "keywords": [
+    "drupal",
+    "drupal-theme",
+    "grunt",
+    "bower"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
