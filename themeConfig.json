@@ -1,0 +1,26 @@
+{
+    "sources": {
+        "js": {
+            "modernizr": [
+                "bower_components/modernizr/modernizr.js"
+            ],
+            "vendor": [
+                "bower_components/fastclick/lib/fastclick.js",
+                "bower_components/foundation/js/foundation.min.js"
+            ],
+            "custom": [
+                "js/app.js"
+            ]
+        },
+        "css": {
+            "custom": [
+                "css/style-1.css",
+                "css/style-2.css"
+            ]
+        }
+    },
+    "destinations": {
+        "js": "assets/js",
+        "css": "assets/css"
+    }
+}
