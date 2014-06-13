@@ -1,0 +1,9 @@
+name = Modern Theme Kickstart
+description = A kickstart template for Drupal 7 theme that makes use of Grunt and Bower.
+core = 7.x
+
+stylesheets[all][] = assets/css/vendor.min.css
+stylesheets[all][] = assets/css/custom.min.css
+
+scripts[] = assets/js/vendor.min.css
+scripts[] = assets/js/custom.min.css
