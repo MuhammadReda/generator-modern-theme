@@ -31,7 +31,8 @@ module.exports = function(grunt) {
     grunt.initConfig({
         clean: {
             temp: [
-                '.tmp/*'
+                '.tmp/*',
+                '.sass-cache/*'
             ],
             build: [
                 'assets/js/*',
@@ -69,6 +70,13 @@ module.exports = function(grunt) {
                 cwd: '.tmp/css/',
                 src: '**/*.css',
                 dest: themeConfig.destinations.css
+            }
+        },
+
+        watch: {
+            scss: {
+                files: themeConfig.sources.scss + '/**/*.scss',
+                tasks: ['compass']
             }
         }
     });
