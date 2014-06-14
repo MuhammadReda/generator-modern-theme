@@ -9,17 +9,18 @@ module.exports = function(grunt) {
             separator: '\n'
         }
     };
+    tasks['cssmin'] = {};
 
     var themeConfig = grunt.file.readJSON('themeConfig.json');
     _.each(themeConfig.sources.js, function(item, index, list) {
-        tasks.concat['js-' + index] = {};
-        tasks.concat['js-' + index]['src'] = item;
-        tasks.concat['js-' + index]['dest'] = '.tmp/js/' + index + '.min.js';
+        tasks.concat[index] = {};
+        tasks.concat[index]['src'] = item;
+        tasks.concat[index]['dest'] = '.tmp/js/' + index + '.min.js';
     });
     _.each(themeConfig.sources.css, function(item, index, list) {
-        tasks.concat['css-' + index] = {};
-        tasks.concat['css-' + index]['src'] = item;
-        tasks.concat['css-' + index]['dest'] = '.tmp/css/' + index + '.min.css';
+        tasks.cssmin[index] = {};
+        tasks.cssmin[index]['files'] = {};
+        tasks.cssmin[index]['files'][themeConfig.destinations.css + '/' + index + '.min.css'] = item;
     });
 
 
@@ -64,14 +65,7 @@ module.exports = function(grunt) {
             }
         },
 
-        cssmin: {
-            target: {
-                expand: true,
-                cwd: '.tmp/css/',
-                src: '**/*.css',
-                dest: themeConfig.destinations.css
-            }
-        },
+        cssmin: tasks.cssmin,
 
         watch: {
             scss: {
