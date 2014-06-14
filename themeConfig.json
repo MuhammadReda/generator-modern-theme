@@ -9,7 +9,7 @@
                 "bower_components/foundation/js/foundation.min.js"
             ],
             "custom": [
-                "js/app.js"
+                "js/**/*.js"
             ]
         },
         "css": {
@@ -17,7 +17,8 @@
                 "css/style-1.css",
                 "css/style-2.css"
             ]
-        }
+        },
+        "scss": "scss"
     },
     "destinations": {
         "js": "assets/js",
