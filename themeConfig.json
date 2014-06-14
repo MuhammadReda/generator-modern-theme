@@ -23,5 +23,8 @@
     "destinations": {
         "js": "assets/js",
         "css": "assets/css"
+    },
+    "watch": {
+        "js": ["custom"]
     }
 }
