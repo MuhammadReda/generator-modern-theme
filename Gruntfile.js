@@ -29,9 +29,16 @@ module.exports = function(grunt) {
 
     tasks['cssmin'] = {};
     _.each(themeConfig.sources.css, function(item, index, list) {
-        tasks.cssmin[index] = {};
-        tasks.cssmin[index]['files'] = {};
-        tasks.cssmin[index]['files'][themeConfig.destinations.css + '/' + index + '.min.css'] = item;
+        var key = 'css_' + index;
+        tasks.cssmin[key] = {};
+        tasks.cssmin[key]['files'] = {};
+        tasks.cssmin[key]['files'][themeConfig.destinations.css + '/' + index + '.min.css'] = item;
+
+        if(_.indexOf(themeConfig.watch.css, index) > -1) {
+            tasks.watch[key] = {};
+            tasks.watch[key].files = item;
+            tasks.watch[key].tasks = ['cssmin:' + key];
+        }
     });
 
 
