@@ -122,5 +122,5 @@ module.exports = function(grunt) {
 //        }
     });
 
-    grunt.registerTask('default', ['clean', 'concat', 'uglify', 'cssmin']);
+    grunt.registerTask('default', ['clean', 'concat', 'uglify', 'cssmin', 'imagemin']);
 };
