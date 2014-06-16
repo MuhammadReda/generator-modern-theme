@@ -4,5 +4,4 @@ bower_components
 .idea
 .sass-cache
 .tmp
-assets/js
-assets/css
+assets
