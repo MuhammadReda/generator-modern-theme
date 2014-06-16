@@ -5,7 +5,6 @@ module.exports = function(grunt) {
 
     var tasks = {};
     var themeConfig = grunt.file.readJSON('themeConfig.json');
-    var watch_js = themeConfig.watch.js;
 
     tasks['watch'] = {};
 
@@ -20,14 +19,13 @@ module.exports = function(grunt) {
         tasks.concat[key]['src'] = item;
         tasks.concat[key]['dest'] = '.tmp/js/' + index + '.min.js';
 
-        if(_.indexOf(watch_js, index) > -1) {
+        if(_.indexOf(themeConfig.watch.js, index) > -1) {
             tasks.watch[key] = {};
             tasks.watch[key].files = item;
             tasks.watch[key].tasks = ['concat:' + key, 'uglify'];
         }
     });
 
-    console.log(tasks.watch);
 
     tasks['cssmin'] = {};
     _.each(themeConfig.sources.css, function(item, index, list) {
