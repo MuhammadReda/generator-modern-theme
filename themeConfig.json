@@ -18,11 +18,12 @@
                 "css/style-2.css"
             ]
         },
-        "scss": "scss"
+        "images": "images"
     },
     "destinations": {
         "js": "assets/js",
-        "css": "assets/css"
+        "css": "assets/css",
+        "images": "assets/img"
     },
     "watch": {
         "js": ["custom"],

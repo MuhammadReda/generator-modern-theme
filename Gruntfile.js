@@ -91,6 +91,20 @@ module.exports = function(grunt) {
             }
         },
 
+        imagemin: {
+            options: {
+                optimizationLevel: 3, // .png
+                progressive: true, // .jpg
+                interlaced: true // .gif
+            },
+            target: {
+                expand: true,
+                cwd: themeConfig.sources.images,
+                src: ['**/*.{png,gif,jpg,jpeg}'],
+                dest: themeConfig.destinations.images
+            }
+        },
+
         concat: tasks.concat,
 
         uglify: tasks.uglify,
