@@ -79,8 +79,8 @@ module.exports = function(grunt) {
                 '.sass-cache/*'
             ],
             build: [
-                'assets/js/*',
-                'assets/css/*'
+                themeConfig.destinations.js + '/*',
+                themeConfig.destinations.css + '/*'
             ]
         },
 
