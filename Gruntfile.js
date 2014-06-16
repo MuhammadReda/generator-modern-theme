@@ -8,6 +8,12 @@ module.exports = function(grunt) {
 
     tasks['watch'] = {};
 
+    tasks['uglify'] = {
+        options: {
+            mangle: false
+        }
+    };
+
     tasks['concat'] = {
         options: {
             separator: '\n'
@@ -15,14 +21,21 @@ module.exports = function(grunt) {
     };
     _.each(themeConfig.sources.js, function(item, index, list) {
         var key = 'js_' + index;
+        var tempJs = '.tmp/js/' + index + '.min.js';
+        var uglifiedJs = themeConfig.destinations.js + '/' + index + '.min.js';
+
         tasks.concat[key] = {};
         tasks.concat[key]['src'] = item;
-        tasks.concat[key]['dest'] = '.tmp/js/' + index + '.min.js';
+        tasks.concat[key]['dest'] = tempJs;
+        
+        tasks.uglify[key] = {};
+        tasks.uglify[key]['files'] = {};
+        tasks.uglify[key]['files'][uglifiedJs] = tempJs;
 
         if(_.indexOf(themeConfig.watch.js, index) > -1) {
             tasks.watch[key] = {};
             tasks.watch[key].files = item;
-            tasks.watch[key].tasks = ['concat:' + key, 'uglify'];
+            tasks.watch[key].tasks = ['concat:' + key, 'uglify:' + key];
         }
     });
 
@@ -68,19 +81,7 @@ module.exports = function(grunt) {
 
         concat: tasks.concat,
 
-        uglify: {
-            options: {
-                mangle: false
-            },
-            target: {
-                files: [{
-                    expand: true,
-                    cwd: '.tmp/js/',
-                    src: '**/*.js',
-                    dest: themeConfig.destinations.js
-                }]
-            }
-        },
+        uglify: tasks.uglify,
 
         cssmin: tasks.cssmin,
 
