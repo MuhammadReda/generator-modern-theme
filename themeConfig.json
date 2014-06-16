@@ -25,6 +25,7 @@
         "css": "assets/css"
     },
     "watch": {
-        "js": ["custom"]
+        "js": ["custom"],
+        "css": ["custom"]
     }
 }
