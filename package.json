@@ -27,7 +27,8 @@
     "grunt-contrib-imagemin": "^0.7.1",
     "grunt-contrib-uglify": "^0.5.0",
     "grunt-contrib-watch": "^0.6.1",
-    "load-grunt-tasks": "^0.5.0"
+    "load-grunt-tasks": "^0.5.0",
+    "time-grunt": "^0.3.2"
   },
   "dependencies": {
     "underscore": "^1.6.0"
