@@ -21,35 +21,48 @@ module.exports = function(grunt) {
 
     _.each(themeConfig.sources.js, function(item, index, list) {
         var key = 'js_' + index;
-        var tempJs = '.tmp/js/' + index + '.min.js';
-        var uglifiedJs = themeConfig.destinations.js + '/' + index + '.min.js';
+        var tempFile = '.tmp/js/' + index + '.min.js';
+        var outputFile = themeConfig.destinations.js + '/' + index + '.min.js';
 
         tasks.concat[key] = {};
         tasks.concat[key]['src'] = item;
-        tasks.concat[key]['dest'] = tempJs;
+        tasks.concat[key]['dest'] = tempFile;
         
         tasks.uglify[key] = {};
         tasks.uglify[key]['files'] = {};
-        tasks.uglify[key]['files'][uglifiedJs] = tempJs;
+        tasks.uglify[key]['files'][outputFile] = tempFile;
 
         if(_.indexOf(themeConfig.watch.js, index) > -1) {
             tasks.watch[key] = {};
             tasks.watch[key].files = item;
-            tasks.watch[key].tasks = ['concat:' + key, 'uglify:' + key];
+            tasks.watch[key].tasks = [
+                'concat:' + key,
+                'uglify:' + key
+            ];
         }
     });
 
 
     _.each(themeConfig.sources.css, function(item, index, list) {
         var key = 'css_' + index;
+        var tempFile = '.tmp/css/' + index + '.min.css';
+        var outputFile = themeConfig.destinations.css + '/' + index + '.min.css';
+
+        tasks.concat[key] = {};
+        tasks.concat[key]['src'] = item;
+        tasks.concat[key]['dest'] = tempFile;
+
         tasks.cssmin[key] = {};
         tasks.cssmin[key]['files'] = {};
-        tasks.cssmin[key]['files'][themeConfig.destinations.css + '/' + index + '.min.css'] = item;
+        tasks.cssmin[key]['files'][outputFile] = tempFile;
 
         if(_.indexOf(themeConfig.watch.css, index) > -1) {
             tasks.watch[key] = {};
             tasks.watch[key].files = item;
-            tasks.watch[key].tasks = ['cssmin:' + key];
+            tasks.watch[key].tasks = [
+                'concat:' + key,
+                'cssmin:' + key
+            ];
         }
     });
 
