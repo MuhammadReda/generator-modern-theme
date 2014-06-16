@@ -7,18 +7,18 @@ module.exports = function(grunt) {
     var themeConfig = grunt.file.readJSON('themeConfig.json');
 
     tasks['watch'] = {};
-
+    tasks['cssmin'] = {};
     tasks['uglify'] = {
         options: {
             mangle: false
         }
     };
-
     tasks['concat'] = {
         options: {
             separator: '\n'
         }
     };
+
     _.each(themeConfig.sources.js, function(item, index, list) {
         var key = 'js_' + index;
         var tempJs = '.tmp/js/' + index + '.min.js';
@@ -40,7 +40,6 @@ module.exports = function(grunt) {
     });
 
 
-    tasks['cssmin'] = {};
     _.each(themeConfig.sources.css, function(item, index, list) {
         var key = 'css_' + index;
         tasks.cssmin[key] = {};
