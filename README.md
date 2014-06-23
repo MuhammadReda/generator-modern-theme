@@ -8,3 +8,4 @@ Features to come:
 - Javascript concatenation and minification.
 - CSS concatenation and minification.
 - Compiling SASS files.
+- Image optimization.
