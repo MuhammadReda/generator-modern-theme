@@ -3,8 +3,9 @@ var _ = require('underscore');
 
 module.exports = function(grunt) {
 
+    var themeConfigFile = 'themeConfig.json';
+    var themeConfig = grunt.file.readJSON(themeConfigFile);
     var tasks = {};
-    var themeConfig = grunt.file.readJSON('themeConfig.json');
 
     tasks['watch'] = {};
     tasks['cssmin'] = {};
@@ -123,5 +124,6 @@ module.exports = function(grunt) {
 //        }
     });
 
-    grunt.registerTask('default', ['clean', 'concat', 'uglify', 'cssmin', 'imagemin', 'clean:temp']);
+    grunt.registerTask('default', ['clean', 'defaultRoutine', 'clean:temp']);
+    grunt.registerTask('defaultRoutine', ['concat', 'uglify', 'cssmin', 'imagemin']);
 };
