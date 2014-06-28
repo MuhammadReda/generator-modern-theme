@@ -18,6 +18,9 @@
                 "css/style-2.css"
             ]
         },
+        "sass": {
+            "foundation": "scss"
+        },
         "images": "images"
     },
     "destinations": {

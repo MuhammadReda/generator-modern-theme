@@ -9,6 +9,7 @@ module.exports = function(grunt) {
 
     tasks['watch'] = {};
     tasks['cssmin'] = {};
+    tasks['compass'] = {};
     tasks['uglify'] = {
         options: {
             mangle: false
@@ -73,6 +74,18 @@ module.exports = function(grunt) {
         }
     });
 
+    _.each(themeConfig.sources.sass, function (item, index, list) {
+        var key = 'sass_' + index;
+        tasks.compass[key] = {
+            options: {
+                sassDir: item,
+                cssDir: themeConfig.destinations.css,
+                javascriptsDir: themeConfig.destinations.js,
+                imagesDir: themeConfig.destinations.images,
+                outputStyle: 'compressed'
+            }
+        };
+    });
 
     require('time-grunt')(grunt);
     require('load-grunt-tasks')(grunt, {
@@ -92,14 +105,6 @@ module.exports = function(grunt) {
             ]
         },
 
-        compass: {
-            target: {
-                options: {
-                    config: 'config.rb'
-                }
-            }
-        },
-
         imagemin: {
             options: {
                 optimizationLevel: 3, // .png
@@ -116,20 +121,15 @@ module.exports = function(grunt) {
 
         concat: tasks.concat,
 
+        compass: tasks.compass,
+
         uglify: tasks.uglify,
 
         cssmin: tasks.cssmin,
 
         watch: tasks.watch
-
-//        watch: {
-//            scss: {
-//                files: themeConfig.sources.scss + '/**/*.scss',
-//                tasks: ['compass']
-//            }
-//        }
     });
 
     grunt.registerTask('default', ['clean', 'defaultRoutine', 'clean:temp']);
-    grunt.registerTask('defaultRoutine', ['concat', 'uglify', 'cssmin', 'imagemin']);
+    grunt.registerTask('defaultRoutine', ['concat', 'uglify', 'cssmin', 'compass', 'imagemin']);
 };
