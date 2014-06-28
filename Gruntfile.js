@@ -20,6 +20,12 @@ module.exports = function(grunt) {
         }
     };
 
+    // watch for themeConfigFile changes
+    tasks.watch['themeConfigFile'] = {
+        files: themeConfigFile,
+        tasks: ['defaultRoutine']
+    };
+
     _.each(themeConfig.sources.js, function(item, index, list) {
         var key = 'js_' + index;
         var tempFile = '.tmp/js/' + index + '.min.js';
