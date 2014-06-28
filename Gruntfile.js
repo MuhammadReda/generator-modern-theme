@@ -80,7 +80,8 @@ module.exports = function(grunt) {
             ],
             build: [
                 themeConfig.destinations.js + '/*',
-                themeConfig.destinations.css + '/*'
+                themeConfig.destinations.css + '/*',
+                themeConfig.destinations.images + '/*'
             ]
         },
 
