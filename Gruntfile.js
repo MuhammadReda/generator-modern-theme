@@ -85,6 +85,14 @@ module.exports = function(grunt) {
                 outputStyle: 'compressed'
             }
         };
+
+        if(_.indexOf(themeConfig.watch.sass, index) > -1) {
+            tasks.watch[key] = {};
+            tasks.watch[key].files = item + '/**/*.{scss,sass}';
+            tasks.watch[key].tasks = [
+                    'compass:' + key
+            ];
+        }
     });
 
     require('time-grunt')(grunt);

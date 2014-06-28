@@ -30,6 +30,7 @@
     },
     "watch": {
         "js": ["custom"],
-        "css": ["custom"]
+        "css": ["custom"],
+        "sass": ["foundation"]
     }
 }
