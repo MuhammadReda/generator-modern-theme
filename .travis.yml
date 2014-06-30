@@ -1,0 +1,7 @@
+language: node_js
+node_js:
+  - '0.10'
+before_install:
+  - currentfolder=${PWD##*/}
+  - if [ "$currentfolder" != 'generator-modern-theme' ]; then cd .. && eval "mv $currentfolder generator-modern-theme" && cd generator-modern-theme; fi
+

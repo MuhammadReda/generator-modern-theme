@@ -1,36 +1,36 @@
 {
-  "name": "modern-drupal7-theme-kickstart",
+  "name": "generator-modern-theme",
   "version": "0.0.1",
-  "description": "A kickstart template for Drupal 7 theme that makes use of Grunt and Bower.",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/MuhammadReda/modern-drupal7-theme-kickstart.git"
-  },
-  "keywords": [
-    "drupal",
-    "drupal-theme",
-    "grunt",
-    "bower"
-  ],
-  "author": "Muhammad Reda <say.hello@mreda.net>",
+  "description": "Yeoman generator",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/MuhammadReda/modern-drupal7-theme-kickstart/issues"
+  "main": "app/index.js",
+  "repository": "MuhammadReda/generator-modern-theme",
+  "author": {
+    "name": "Muhammad Reda",
+    "email": "say.hello@mreda.net",
+    "url": "https://github.com/MuhammadReda"
   },
-  "homepage": "https://github.com/MuhammadReda/modern-drupal7-theme-kickstart",
-  "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-contrib-clean": "^0.5.0",
-    "grunt-contrib-compass": "^0.8.0",
-    "grunt-contrib-concat": "^0.4.0",
-    "grunt-contrib-cssmin": "^0.10.0",
-    "grunt-contrib-imagemin": "^0.7.1",
-    "grunt-contrib-uglify": "^0.5.0",
-    "grunt-contrib-watch": "^0.6.1",
-    "load-grunt-tasks": "^0.5.0",
-    "time-grunt": "^0.3.2"
+  "engines": {
+    "node": ">=0.10.0"
   },
+  "scripts": {
+    "test": "mocha"
+  },
+  "files": [
+    "app"
+  ],
+  "keywords": [
+    "yeoman-generator"
+  ],
   "dependencies": {
-    "underscore": "^1.6.0"
+    "yeoman-generator": "~0.16.0",
+    "chalk": "~0.4.0",
+    "yosay": "^0.1.0"
+  },
+  "devDependencies": {
+    "mocha": "*"
+  },
+  "peerDependencies": {
+    "yo": ">=1.0.0"
   }
 }

@@ -1,0 +1,14 @@
+{
+  "name": "package",
+  "version": "0.0.0",
+  "dependencies": {
+      <% if(useModernizr) { %>
+      "modernizr": "*"
+      <% } %>
+
+      <% if(useFoundation) { %>
+      , "foundation": "*"
+      <% } %>
+  }
+}
+

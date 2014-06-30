@@ -1,0 +1,29 @@
+{
+    "sources": {
+        "js": {
+            <% if(useModernizr) { %>
+            "modernizr": [
+                "<%= bowerFolder %>/modernizr/modernizr.js"
+            ]
+            <% } %>
+        },
+        "css": {
+        },
+        "sass": {
+            <% if(useFoundation) { %>
+            "foundation": "scss"
+            <% } %>
+        },
+        "images": "images"
+    },
+    "destinations": {
+        "js": "<%= themeFolder %>/js",
+        "css": "<%= themeFolder %>/css",
+        "images": "<%= themeFolder %>/img"
+    },
+    "watch": {
+        "js": ["custom"],
+        "css": ["custom"],
+        "sass": ["foundation"]
+    }
+}
