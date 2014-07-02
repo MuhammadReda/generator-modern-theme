@@ -7,7 +7,7 @@ var chalk = require('chalk');
 
 /**
  * Custom options:
- *      - theme-drupal-7
+ *      * --theme-drupal-7
  *          To clone drupal theme files.
  */
 
@@ -109,6 +109,7 @@ var ModernThemeGenerator = yeoman.generators.Base.extend({
 
     projectfiles: function () {
         var _baseFolder = this.projectName + '/';
+        var _themeFolder = this.themeFolder;
 
         this.copy('editorconfig', _baseFolder + '.editorconfig');
 
@@ -124,6 +125,7 @@ var ModernThemeGenerator = yeoman.generators.Base.extend({
 
         if(this.options['theme-drupal-7']) {
             console.log('Clonging Drupal theme files.');
+            this.template('theme-drupal-7/_theme.info', _baseFolder + _themeFolder + '/' + _themeFolder + '.info');
         }
     }
 });
