@@ -1,3 +1,5 @@
 node_modules/
 temp/
+.sass-cache/
 .idea/
+*.swp
