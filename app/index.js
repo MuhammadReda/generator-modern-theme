@@ -122,6 +122,7 @@ var ModernThemeGenerator = yeoman.generators.Base.extend({
 
         if(this.options['theme-drupal-7']) {
             this.template('theme-drupal-7/_theme.info', _baseFolder + _themeFolder + '/' + _themeFolder + '.info');
+            this.template('theme-drupal-7/_template.php', _baseFolder + _themeFolder + '/template.php');
         }
     }
 });
