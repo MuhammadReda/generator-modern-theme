@@ -101,7 +101,6 @@ var ModernThemeGenerator = yeoman.generators.Base.extend({
         this.mkdir(this.projectName);
         this.mkdir(_baseFolder + this.themeFolder);
 
-        console.log('Cloning Bower and NPM files.');
         this.template('bowerrc', _baseFolder + '.bowerrc');
         this.template('_bower.json', _baseFolder + 'bower.json');
         this.template('_package.json', _baseFolder + 'package.json');
@@ -113,18 +112,15 @@ var ModernThemeGenerator = yeoman.generators.Base.extend({
 
         this.copy('editorconfig', _baseFolder + '.editorconfig');
 
-        console.log('Cloning Gruntfile.js and theme configuration file.');
         this.template('_Gruntfile.js', _baseFolder + 'Gruntfile.js');
         this.template('_themeConfig.json', _baseFolder + 'themeConfig.json');
 
         if(this.useFoundation) {
-            console.log('Cloning foundation SASS files.');
             this.copy('scss/_settings.scss', _baseFolder + 'scss/_settings.scss');
             this.template('scss/foundation.scss', _baseFolder + 'scss/foundation.scss');
         }
 
         if(this.options['theme-drupal-7']) {
-            console.log('Clonging Drupal theme files.');
             this.template('theme-drupal-7/_theme.info', _baseFolder + _themeFolder + '/' + _themeFolder + '.info');
         }
     }
