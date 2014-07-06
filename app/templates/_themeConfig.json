@@ -1,18 +1,14 @@
 {
     "sources": {
         "js": {
-            <% if(useModernizr) { %>
-            "modernizr": [
+            <% if(useModernizr) { %>"modernizr": [
                 "<%= bowerFolder %>/modernizr/modernizr.js"
-            ]
-            <% } %>
+            ]<% } %>
         },
         "css": {
         },
         "sass": {
-            <% if(useFoundation) { %>
-            "foundation": "scss"
-            <% } %>
+            <% if(useFoundation) { %>"foundation": "scss"<% } %>
         },
         "images": "images"
     },

@@ -73,8 +73,7 @@ module.exports = function(grunt) {
         }
     });
 
-    <% if(useCompass) { %>
-    tasks['compass'] = {};
+    <% if(useCompass) { %>tasks['compass'] = {};
     _.each(themeConfig.sources.sass, function (item, index, list) {
         var key = 'sass_' + index;
         tasks.compass[key] = {
@@ -97,8 +96,7 @@ module.exports = function(grunt) {
     });
 
     if(_.isEmpty(tasks.compass))
-        tasks.compass['dummyTarget'] = {};
-    <% } %>
+        tasks.compass['dummyTarget'] = {};<% } %>
 
     require('time-grunt')(grunt);
     require('load-grunt-tasks')(grunt, {
@@ -146,9 +144,7 @@ module.exports = function(grunt) {
 
         concat: tasks.concat,
 
-        <% if(useCompass) { %>
-        compass: tasks.compass,
-        <% } %>
+        <% if(useCompass) { %>compass: tasks.compass,<% } %>
 
         uglify: tasks.uglify,
 
@@ -159,14 +155,10 @@ module.exports = function(grunt) {
 
     grunt.registerTask('default', ['clean', 'defaultRoutine', 'clean:temp']);
     grunt.registerTask('defaultRoutine', [
-        'concat',
-        'uglify',
-        'cssmin'
-        <% if(useCompass) { %>
-        , 'compass'
-        <% } %>
-        <% if(useImagemin) { %>
-        , 'imagemin'
-        <% } %>
+        'concat'
+        , 'uglify'
+        , 'cssmin'
+        <% if(useCompass) { %>, 'compass'<% } %>
+        <% if(useImagemin) { %>, 'imagemin'<% } %>
     ]);
 };
