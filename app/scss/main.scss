@@ -1,0 +1,41 @@
+$header-bgColor: #ccc;
+
+body
+{
+  min-height: 100%;
+}
+
+
+#navWrap
+{
+  background-color: $header-bgColor;
+
+  a#navToggle
+  {
+    font-size: 48px;
+    margin: 20px 10px 0;
+    color: #222;
+  }
+}
+
+#header
+{
+  border-bottom: solid 3px #888;
+  background-color: $header-bgColor;
+}
+
+#contentWrap
+{
+  padding-top: 25px;
+  border-top: solid 2px #dadada;
+}
+
+
+code
+{
+  padding: 2px 5px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  background-color: #f8f8f8;
+  font-size: 15px;
+}
