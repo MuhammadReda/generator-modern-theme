@@ -1,0 +1,9 @@
+{
+  "name": "modern-theme-generator-docs",
+  "version": "1.0.0",
+  "dependencies": {
+      "modernizr": "*"
+      , "foundation": "*"
+  }
+}
+
