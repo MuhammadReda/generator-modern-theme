@@ -1,10 +1,39 @@
 <!doctype html>
-<html lang="en">
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" ng-app="docsApp" ng-controller="pageHead_ctrl"> <![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" ng-app="docsApp" ng-controller="pageHead_ctrl"> <![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" ng-app="docsApp" ng-controller="pageHead_ctrl"> <![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" ng-app="docsApp" ng-controller="pageHead_ctrl"> <!--<![endif]-->
 <head>
-    <meta charset="UTF-8">
-    <title>Document</title>
+    <meta charset="utf-8">
+    <title ng-bind="PageHead.title() + ' - Modern Theme Generator'"></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="assets/css/foundation.css"/>
+    <link rel="stylesheet" href="assets/css/main.css"/>
+
+    <script src="assets/js/modernizr.min.js"></script>
+
 </head>
 <body>
 
+<div class="off-canvas-wrap" data-offcanvas>
+    <div class="inner-wrap">
+
+        <div id="navWrap" ng-include="'views/includes/navigation.html'"></div>
+        <div id="header" ng-include="'views/includes/header.html'"></div>
+
+    </div>
+</div>
+
+
+
+
+
+<!--<script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.js"></script>-->
+<script src="assets/js/vendor.min.js"></script>
+<script src="assets/js/custom.min.js"></script>
+
+<script src="//localhost:35729/livereload.js"></script>
 </body>
 </html>
