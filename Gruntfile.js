@@ -7,7 +7,18 @@ module.exports = function(grunt) {
     var themeConfig = grunt.file.readJSON(themeConfigFile);
     var tasks = {};
 
-    tasks['watch'] = {};
+    tasks['watch'] = {
+        options: {
+            livereload: true
+        },
+        html: {
+            files: ['app/**/*.html']
+        },
+        markdown: {
+            files: ['app/md-content/**/*.md'],
+            tasks: ['markdown']
+        }
+    };
     tasks['cssmin'] = {};
     tasks['uglify'] = {
         options: {
@@ -122,7 +133,8 @@ module.exports = function(grunt) {
             build: [
                 themeConfig.destinations.js + '/*',
                 themeConfig.destinations.css + '/*',
-                themeConfig.destinations.images + '/*'
+                themeConfig.destinations.images + '/*',
+                'app/views/content/**/*.html'
             ]
         },
 
@@ -152,6 +164,40 @@ module.exports = function(grunt) {
 
         watch: tasks.watch,
 
+        markdown: {
+            target: {
+                options: {
+                    template: 'app/md-content/template.jst',
+                    markdownOptions: {
+                        highlight: 'manual',
+                        codeLines: {
+                            before: '<span class="md-generated-codeLine">',
+                            after: '</span>'
+                        }
+                    }
+                },
+                files: [
+                    {
+                        expand: true,
+                        cwd: 'app/md-content',
+                        src: '**/*.md',
+                        dest: 'app/views/content',
+                        ext: '.html'
+                    }
+                ]
+            }
+        },
+
+        connect: {
+            server: {
+                options: {
+                    port: 9099,
+                    base: 'app',
+                    keepalive: false
+                }
+            }
+        },
+
         'gh-pages': {
             options: {
                 base: 'app',
@@ -159,16 +205,15 @@ module.exports = function(grunt) {
                 branch: 'gh-pages',
                 message: 'Auto-generated commit by Grunt.'
             },
-            src: '**/*'
+            src: [
+                'index.html',
+                'views/**/*.*',
+                'assets/**/*.*'
+            ]
         }
     });
 
     grunt.registerTask('default', ['clean', 'defaultRoutine', 'clean:temp']);
-    grunt.registerTask('defaultRoutine', [
-        'concat',
-        'uglify',
-        'cssmin',
-        'compass',
-        'imagemin'
-    ]);
+    grunt.registerTask('defaultRoutine', ['markdown', 'concat', 'uglify', 'cssmin', 'compass', 'imagemin']);
+    grunt.registerTask('server', ['defaultRoutine', 'connect', 'watch']);
 };
