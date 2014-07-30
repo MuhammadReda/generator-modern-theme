@@ -2,8 +2,9 @@
   "name": "modern-theme-generator-docs",
   "version": "1.0.0",
   "dependencies": {
-      "modernizr": "*"
-      , "foundation": "*"
+    "modernizr": "*",
+    "foundation": "*",
+    "angular": "~1.2.21",
+    "angular-ui-router": "~0.2.10"
   }
 }
-
