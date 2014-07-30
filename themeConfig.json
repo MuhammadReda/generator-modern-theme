@@ -5,10 +5,20 @@
                 "bower_components/modernizr/modernizr.js"
             ],
             "vendor": [
-
+                "bower_components/jquery/dist/jquery.min.js",
+                "bower_components/fastclick/lib/fastclick.js",
+                "bower_components/foundation/js/foundation/foundation.js",
+                "bower_components/foundation/js/foundation/foundation.offcanvas.js",
+                "bower_components/angular/angular.min.js",
+                "bower_components/angular-ui-router/release/angular-ui-router.min.js"
             ],
             "custom": [
-                
+                "app/scripts/main.js",
+                "app/scripts/app.js",
+                "app/scripts/appRoutes.js",
+                "app/scripts/services/pageHead.js",
+                "app/scripts/controllers/pageHead.js",
+                "app/scripts/controllers/homeCtrl.js"
             ]
         },
         "css": {
@@ -19,9 +29,9 @@
         "images": "images"
     },
     "destinations": {
-        "js": "dist/js",
-        "css": "dist/css",
-        "images": "dist/img"
+        "js": "app/assets/js",
+        "css": "app/assets/css",
+        "images": "app/assets/img"
     },
     "watch": {
         "js": ["vendor", "custom"],
