@@ -8,7 +8,14 @@ watch for file changes and few things more without even touching Gruntfile.js.
 
 
 ### Features
-- Javascript concatenation and minification.
-- CSS concatenation and minification.
-- Compiling SASS files.
-- Image optimization.
+- Automatically concatenate and minify JavaScript files.
+- Automatically concatenate and minify CSS files.
+- Automatically compile SASS files.
+- Image optimization (Optional).
+- Foundation for SASS (Optional).
+
+### Getting started
+- Make sure that you have `yo` installed globally. `npm install -g yo`
+- Install generator-modern-theme. `npm install -g generator-modern-theme`
+- To start using the generator, run `yo modern-theme`
+

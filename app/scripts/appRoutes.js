@@ -13,4 +13,22 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
         }
     });
 
+    $stateProvider.state('generatorPrompts', {
+	url: '/wiki/generator-prompts',
+	views: {
+	    'view-main': {
+		templateUrl: 'views/content/generator-prompts.html'
+	    }
+	}
+    });
+
+    $stateProvider.state('folderStructure', {
+	url: '/wiki/folder-structure',
+	views: {
+	    'view-main': {
+		templateUrl: 'views/content/folder-structure.html'
+	    }
+	}
+    });
+
 });

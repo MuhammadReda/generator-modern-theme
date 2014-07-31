@@ -1,4 +1,4 @@
 function homeCtrl($scope, PageHead) {
 
-    PageHead.setTitle("Egyptian");
+    PageHead.setTitle("Yeoman generator-modern-theme");
 }
