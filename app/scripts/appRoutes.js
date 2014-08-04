@@ -31,4 +31,13 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 	}
     });
 
+    $stateProvider.state('themeConfigFile', {
+	url: '/wiki/theme-config-file',
+	views: {
+	    'view-main': {
+		templateUrl: 'views/content/theme-config-file.html'
+	    }
+	}
+    });
+
 });
