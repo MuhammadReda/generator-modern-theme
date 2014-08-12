@@ -31,6 +31,15 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 	}
     });
 
+    $stateProvider.state('gruntTasks', {
+	url: '/wiki/builtin-grunt-tasks',
+	views: {
+	    'view-main': {
+		templateUrl: 'views/content/grunt-tasks.html'
+	    }
+	}
+    });
+
     $stateProvider.state('themeConfigFile', {
 	url: '/wiki/theme-config-file',
 	views: {
@@ -41,3 +50,4 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
     });
 
 });
+
