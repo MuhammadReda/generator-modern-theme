@@ -17,11 +17,19 @@
 </head>
 <body>
 
-<div class="off-canvas-wrap" data-offcanvas>
+<div id="pageWrap" class="off-canvas-wrap" data-offcanvas>
     <div class="inner-wrap">
 
         <div id="navWrap" ng-include="'views/includes/navigation.html'"></div>
         <div id="header" ng-include="'views/includes/header.html'"></div>
+
+        <div id="contentWrap">
+            <div class="row">
+                <div class="small-12 columns">
+                    <div ui-view="view-main" class="page-content"></div>
+                </div>
+            </div>
+        </div>
 
     </div>
 </div>

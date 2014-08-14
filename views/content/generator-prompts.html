@@ -1,0 +1,38 @@
+<div class="md-generated">
+    <h2 id="generator-prompts">Generator Prompts</h2>
+<p>When the generator runs, you should be alerted the following questions/messages:</p>
+<ul>
+<li><code>Your project name</code>: The folder will contain all the generated files.</li>
+<li><code>Your theme folder</code>: The name of the folder that will contain your theme files (HTML, Javascript, CSS and image files). Defaults to: <code>theme</code></li>
+<li><code>Bower Components folder</code>: The folder that <a href="https://bower.io/">Bower</a> would use to download all its packages. Defaults to: <code>bower_components</code></li>
+<li><code>Would you like to use Modernizr?</code>: Would you like to download <a href="http://modernizr.com/">Modernizr</a>? Defaults to: <code>Yes</code></li>
+<li><code>Would you like to use Foundation SASS Library?</code>: Would you like to download Foundation SASS library? Defaults to: <code>Yes</code></li>
+<li><code>Would you like to have your images minified?</code>: Would you like to install <a href="https://www.npmjs.org/package/grunt-contrib-imagemin">grunt imagemin plugin</a> to have your images minified? Defaults to: <code>Yes</code></li>
+</ul>
+<h3 id="default-folder-structure">Default folder structure</h3>
+<p>With the default generator prompts, the generated folder structre should be like:</p>
+<pre><code class="lang-shell">myProject
+<span class="string">|</span>
+├── bower_components    <span class="preprocessor"># packages downloaded via bower.</span>
+<span class="string">|</span>
+├── node_modules        <span class="preprocessor"># packages downloaded via npm. </span>
+<span class="string">|</span>
+├── scss                <span class="preprocessor"># default "scss" dir. (can be changed from "themeConfig.json")</span>
+<span class="string">|</span>
+├── theme               <span class="preprocessor"># Where all theme files reside</span>
+<span class="string">|</span>
+├── bower.json          
+<span class="string">|</span>
+├── Gruntfile.js        <span class="preprocessor"># Grunt file.</span>
+<span class="string">|</span>
+├── package.json        
+<span class="string">|</span>
+├── themeConfig.json    <span class="preprocessor"># Theme config file.</span>
+<span class="string">|</span>
+├── .bowerrc            <span class="preprocessor"># bower special config file.</span>
+<span class="string">|</span>
+└── .editorconfig       <span class="preprocessor"># Editor config. http://editorConfig.org/</span></code></pre>
+<hr>
+<p><a href="https://github.com/MuhammadReda/generator-modern-theme/tree/docs/app/md-content/generator-prompts.md">Improve this document.</a></p>
+
+</div>

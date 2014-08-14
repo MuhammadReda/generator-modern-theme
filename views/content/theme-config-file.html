@@ -1,0 +1,95 @@
+<div class="md-generated">
+    <h2 id="theme-config-file-small-themeconfig-json-small-">Theme Config File <small>&quot;themeConfig.json&quot;</small></h2>
+<p>This &quot;modern-theme&quot; generator is basically built to speed up the process of
+creating HTML/CSS/JS themes that make use of popular grunt plugins
+(that you maybe are using in every theme),
+without the need to touch your <code>Gruntfile.js</code> file.</p>
+<p>The generator is using a special config file <code>themeConfig.json</code> to do so.</p>
+<p><code>themeConfig.json</code> is a JSON object that represents 3 pain propertires:</p>
+<ul>
+<li><code>sources</code>: Is where you set the source files you need to concat/minify.</li>
+<li><code>destinations</code>: Is where you&#39;ll store the auto-generated files.</li>
+<li><code>watch</code>: Is where you set tasks to be watch for changes.</li>
+</ul>
+<p>An empty <code>themeConfig.json</code> should look like this:</p>
+<pre><code class="lang-shell">{
+    "<span class="attribute">sources</span>": <span class="value">{
+        "<span class="attribute">js</span>": <span class="value">{}</span>,
+        "<span class="attribute">css</span>": <span class="value">{}</span>,
+        "<span class="attribute">sass</span>": <span class="value">{}</span>,
+        "<span class="attribute">images</span>": <span class="value"><span class="string">""</span>
+    }</span></span>,
+    "<span class="attribute">destinations</span>": <span class="value">{
+        "<span class="attribute">js</span>": <span class="value"><span class="string">""</span></span>,
+        "<span class="attribute">css</span>": <span class="value"><span class="string">""</span></span>,
+        "<span class="attribute">images</span>": <span class="value"><span class="string">""</span>
+    }</span></span>,
+    "<span class="attribute">watch</span>": <span class="value">{
+        "<span class="attribute">js</span>": <span class="value">[]</span>,
+        "<span class="attribute">css</span>": <span class="value">[]</span>,
+        "<span class="attribute">sass</span>": <span class="value">[]
+    }</span>
+}</span></code></pre>
+<hr>
+<h4 id="themeconfig-json-sources">themeConfig.json &gt;&gt; sources</h4>
+<p><code>sources</code> property inside the theme configuration object consists of 4 properties (<code>js</code>, <code>css</code>, <code>sass</code> and <code>images</code>).
+All of which is a JSON object (except <code>images</code> is a string) that consists of <u>key-value</u> pairs of JSON objects;
+The <u>key</u> is a string for the output file name
+and the <u>value</u> is an array of the files to be concatenated and/or minified.</p>
+<h6 id="code-sample-">Code sample:</h6>
+<pre><code class="lang-shell">{
+    <span class="string">"sources"</span>: {
+        <span class="string">"js"</span>: {
+            <span class="string">"modernizr"</span>: [
+                <span class="string">"bower_components/modernizr/modernizr.js"</span>
+            ],
+            <span class="string">"vendor"</span>: [
+                <span class="string">"bower_components/jquery/dist/jquery.min.js"</span>,
+                <span class="string">"bower_components/fastclick/lib/fastclick.js"</span>,
+                <span class="string">"bower_components/foundation/js/foundation/foundation.js"</span>
+            ],
+            <span class="string">"custom"</span>: [
+                <span class="string">"code/scripts/file-a.js"</span>,
+                <span class="string">"code/scripts/file-b.js"</span>,
+                <span class="string">"code/scripts/file-c.js"</span>
+            ]
+        },
+    <span class="keyword">...</span></code></pre>
+<p>In the above code sample, the <code>js</code> object inside the <code>sources</code> object consists of 3 properties (<code>modernizr</code>, <code>vendor</code> and <code>custom</code>).
+The generator will concatenate and minify all the javascript files isnide each array and will create 3 javascript files
+named according to the <u>key</u> value
+(Which means that we will have the files <code>modernizr.min.js</code>, <code>vendor.min.js</code> and <code>custom.min.js</code>).</p>
+<hr>
+<h4 id="themeconfig-json-destinations">themeConfig.json &gt;&gt; destinations</h4>
+<p><code>destinations</code> property inside the main theme configuration object
+is where you tell your theme to save the auto-generated files.</p>
+<h6 id="code-sample-">Code sample:</h6>
+<pre><code class="lang-shell">{
+    <span class="keyword">...</span>
+    <span class="string">"destinations"</span>: {
+        <span class="string">"js"</span>: <span class="string">"assets/js"</span>,        <span class="comment"># where generated .min.js file will be saved.</span>
+        <span class="string">"css"</span>: <span class="string">"assets/css"</span>,      <span class="comment"># where generated .min.css file will be saved.</span>
+        <span class="string">"images"</span>: <span class="string">"assets/img"</span>    <span class="comment"># where minified images file will be saved.</span>
+    },
+    <span class="keyword">...</span></code></pre>
+<hr>
+<h4 id="themeconfig-json-watch">themeConfig.json &gt;&gt; watch</h4>
+<p><code>watch</code> property inside the main theme configuration object
+is where you mark the tasks to be watched for changes and run related grunt tasks.</p>
+<h6 id="code-sample-">Code sample:</h6>
+<pre><code class="lang-shell">{
+    <span class="keyword">...</span>
+    <span class="string">"watch"</span>: {
+        <span class="string">"js"</span>: [<span class="string">"vendor"</span>, <span class="string">"custom"</span>],
+        <span class="string">"css"</span>: [<span class="string">"custom"</span>],
+        <span class="string">"sass"</span>: [<span class="string">"foundation"</span>]
+    }
+}</code></pre>
+<p>In the above sample, the theme will watch for changes inside <code>sources.js.vendor</code> and <code>sources.js.custom</code> only
+and will ignore all other objects inside <code>sources.js</code>.
+And on every change on one of the files, the theme will re-concatenate and re-compress the files
+and will generate a new minified &amp; compressed version.</p>
+<hr>
+<p><a href="https://github.com/MuhammadReda/generator-modern-theme/tree/docs/app/md-content/theme-config-file.md">Improve this document.</a></p>
+
+</div>
