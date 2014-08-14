@@ -56,7 +56,8 @@ code
     border-radius: 3px;
     color: #fff;
 
-    & span.preprocessor
+    & span.preprocessor,
+    & span.comment
     {
       color: #696BFF;
     }
