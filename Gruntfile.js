@@ -207,6 +207,7 @@ module.exports = function(grunt) {
             },
             src: [
                 'index.html',
+                'CNAME',
                 'views/**/*.*',
                 'assets/**/*.*'
             ]
