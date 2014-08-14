@@ -19,3 +19,5 @@ watch for file changes and few things more without even touching Gruntfile.js.
 - Install generator-modern-theme. `npm install -g generator-modern-theme`
 - To start using the generator, run `yo modern-theme`
 
+
+[Improve this document.](https://github.com/MuhammadReda/generator-modern-theme/tree/docs/app/md-content/home.md)
