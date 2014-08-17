@@ -12,10 +12,10 @@ module.exports = function(grunt) {
             livereload: true
         },
         html: {
-            files: ['app/**/*.html']
+            files: ['site/**/*.html']
         },
         markdown: {
-            files: ['app/md-content/**/*.md'],
+            files: ['site/md-content/**/*.md'],
             tasks: ['markdown']
         }
     };
@@ -134,7 +134,7 @@ module.exports = function(grunt) {
                 themeConfig.destinations.js + '/*',
                 themeConfig.destinations.css + '/*',
                 themeConfig.destinations.images + '/*',
-                'app/views/content/**/*.html'
+                'site/views/content/**/*.html'
             ]
         },
 
@@ -167,7 +167,8 @@ module.exports = function(grunt) {
         markdown: {
             target: {
                 options: {
-                    template: 'app/md-content/template.jst',
+                    template: 'site/md-content/template.jst',
+                    template: 'site/md-content/template.jst',
                     markdownOptions: {
                         highlight: 'manual',
                         codeLines: {
@@ -179,9 +180,9 @@ module.exports = function(grunt) {
                 files: [
                     {
                         expand: true,
-                        cwd: 'app/md-content',
+                        cwd: 'site/md-content',
                         src: '**/*.md',
-                        dest: 'app/views/content',
+                        dest: 'site/views/content',
                         ext: '.html'
                     }
                 ]
@@ -192,7 +193,7 @@ module.exports = function(grunt) {
             server: {
                 options: {
                     port: 9099,
-                    base: 'app',
+                    base: 'site',
                     keepalive: false
                 }
             }
@@ -200,7 +201,7 @@ module.exports = function(grunt) {
 
         'gh-pages': {
             options: {
-                base: 'app',
+                base: 'site',
                 push: true,
                 branch: 'gh-pages',
                 message: 'Auto-generated commit by Grunt.'
