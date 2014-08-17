@@ -1,9 +1,9 @@
 # generator-modern-theme
 
-A [Yeoman][yeoman] generator.
+A [Yeoman](http://yeoman.io) generator.
 
-A [Yeoman][yeoman] generator to speed up the process of creating HTML themes
-that make use of popular [Grunt][grunt] plugins.
+A [Yeoman](http://yeoman.io) generator to speed up the process of creating HTML themes
+that make use of popular [Grunt](http://gruntjs.com) plugins.
 
 Using this generator, you can minify your theme's javascript &amp; CSS files,
 watch for file changes and few things more without even touching Gruntfile.js.
@@ -20,17 +20,7 @@ watch for file changes and few things more without even touching Gruntfile.js.
 - Image optimization (Optional).
 - Foundation for SASS (Optional).
 
-### [Documentation][docs]
-
+### [Documentation](http://modern-theme.mreda.net/)
 
 ### License
-[MIT][license]
-
-
-
-[yeoman]: (http://yeoman.io)
-[bower]: (http://bower.io)
-[grunt]: (http://gruntjs.com)
-[drupal]: (http://drupal.org)
-[license]: (http://opensource.org/licenses/MIT)
-[docs]: (http://modern-theme.mreda.net/)
+[MIT](http://opensource.org/licenses/MIT)
