@@ -168,7 +168,6 @@ module.exports = function(grunt) {
             target: {
                 options: {
                     template: 'site/md-content/template.jst',
-                    template: 'site/md-content/template.jst',
                     markdownOptions: {
                         highlight: 'manual',
                         codeLines: {
