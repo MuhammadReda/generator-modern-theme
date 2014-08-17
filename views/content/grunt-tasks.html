@@ -1,5 +1,39 @@
 <div class="md-generated">
-    <hr>
+    <h2 id="built-in-grunt-tasks">Built-in Grunt Tasks</h2>
+<p>So far, the generator only deals with (<code>.js</code>, <code>.css</code>, <code>.scss</code>, <code>.sass</code> and images)</p>
+<hr>
+<h4 id="task-clean-">task: <code>clean</code></h4>
+<p>Cleans temporary files and build files. Runs 2 sub-tasks.</p>
+<ul>
+<li><code>clean:temp</code>: Deletes all files inside the folder <code>/.~tmp</code>.</li>
+<li><code>clean:build</code>: Deletes all auto-generated (<code>.js</code>, <code>.css</code> and images) files.</li>
+</ul>
+<hr>
+<h4 id="task-compass-">task: <code>compass</code></h4>
+<p>Compiles (<code>.scss</code> and <code>.sass</code> files) and saves them to the CSS destination folder.</p>
+<hr>
+<h4 id="task-concat-">task: <code>concat</code></h4>
+<p>Concatenates all grouped (<code>.js</code> and <code>.css</code> files) into one file and save
+the generated file inside the project&#39;s temp folder.</p>
+<hr>
+<h4 id="task-cssmin-">task: <code>cssmin</code></h4>
+<p>Minfies concatenated <code>css</code> files from the task <code>concat</code>,
+and saves the minified version to the CSS destination folder.</p>
+<hr>
+<h4 id="task-uglify-">task: <code>uglify</code></h4>
+<p>Minfies concatenated <code>js</code> files from the task <code>concat</code>,
+and saves the minified version to the JS destination folder.
+<br/>
+(<code>Mangle</code> feature is disabled by default.)</p>
+<hr>
+<h4 id="task-imagemin-small-optional-small-">task: <code>imagemin</code> <small>(optional)</small></h4>
+<p>Does as it says. Minifies all images inside the images source folder
+and save them to the images destination folder.</p>
+<hr>
+<h4 id="task-watch-">task: <code>watch</code></h4>
+<p>Watches for changesin (<code>js</code>, <code>css</code>, <code>sass</code>, <code>scss</code> files and <code>themeConfig.json</code> file)
+and run related tasks accordingly.</p>
+<hr>
 <p><a href="https://github.com/MuhammadReda/generator-modern-theme/tree/docs/app/md-content/grunt-tasks.md">Improve this document.</a></p>
 
 </div>
