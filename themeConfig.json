@@ -13,25 +13,25 @@
                 "bower_components/angular-ui-router/release/angular-ui-router.min.js"
             ],
             "custom": [
-                "app/scripts/main.js",
-                "app/scripts/app.js",
-                "app/scripts/appRoutes.js",
-                "app/scripts/services/pageHead.js",
-                "app/scripts/controllers/pageHead.js",
-                "app/scripts/controllers/homeCtrl.js"
+                "site/scripts/main.js",
+                "site/scripts/app.js",
+                "site/scripts/appRoutes.js",
+                "site/scripts/services/pageHead.js",
+                "site/scripts/controllers/pageHead.js",
+                "site/scripts/controllers/homeCtrl.js"
             ]
         },
         "css": {
         },
         "sass": {
-            "foundation": "app/scss"
+            "foundation": "site/scss"
         },
         "images": "images"
     },
     "destinations": {
-        "js": "app/assets/js",
-        "css": "app/assets/css",
-        "images": "app/assets/img"
+        "js": "site/assets/js",
+        "css": "site/assets/css",
+        "images": "site/assets/img"
     },
     "watch": {
         "js": ["vendor", "custom"],
